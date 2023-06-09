@@ -25,7 +25,6 @@ set(PROJECT_SOURCES
         mainwindow.ui
         udpworker.h
         udpworker.cpp
-        message.h
 )
 
 

@@ -4,19 +4,15 @@
 #include <QUdpSocket>
 #include <QNetworkDatagram>
 #include <QDateTime>
-#include "message.h"
 
-
-#define BIND_PORT 12345
 
 class UDPworker : public QObject
 {
     Q_OBJECT
 public:
     explicit UDPworker(QObject *parent = nullptr);
-    void InitSocket(void);
-    void ReadDatagram(QNetworkDatagram datagram);
-    void SendDatagram(const QString& str);
+    void InitSocket(QHostAddress sendToHost, int sendToPort, int listenToPort);
+    void SendDatagram(const QByteArray& data);
 
 
 private slots:
@@ -24,9 +20,11 @@ private slots:
 
 private:
     QUdpSocket* serviceUdpSocket;
-
+    QHostAddress sendToHost;
+    int sendToPort;
+    int listenToPort;
 signals:
-    void sig_MessageReceived(Message msg);
+    void sig_MessageReceived(QNetworkDatagram datagram);
 
 };
 

@@ -39,6 +39,29 @@
      </widget>
     </item>
     <item>
+     <widget class="QGroupBox" name="groupBox">
+      <property name="title">
+       <string>Таймер</string>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout">
+       <item>
+        <widget class="QPushButton" name="pb_Start">
+         <property name="text">
+          <string>Начать передачу</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="pb_Stop">
+         <property name="text">
+          <string>Остановить передачу</string>
+         </property>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
      <widget class="QGroupBox" name="gb_DataToSend">
       <property name="title">
        <string>Отправка данных</string>
@@ -68,6 +91,8 @@
   </widget>
  </widget>
  <tabstops>
+  <tabstop>pb_Start</tabstop>
+  <tabstop>pb_Stop</tabstop>
   <tabstop>le_TextToSend</tabstop>
   <tabstop>pb_Send</tabstop>
   <tabstop>te_result</tabstop>
